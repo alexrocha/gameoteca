@@ -17,7 +17,6 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'simplecov'
-require 'codecov'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -37,10 +36,6 @@ RSpec.configure do |config|
 
   SimpleCov.start 'rails' do
     add_filter '/spec/'
-  end
-
-  if ENV["CODECOV_TOKEN"]
-    SimpleCov.formatter = SimpleCov::Formatter::Codecov
   end
 
   # rspec-mocks config goes here. You can use an alternate test double
