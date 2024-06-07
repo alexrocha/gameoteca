@@ -27,6 +27,12 @@ Trestle.resource(:games) do
       end
     end
     text_area :description
+    file_field :picture
+    file_field :background_image
+
+    sidebar do
+      render 'admin/shared/images'
+    end
   end
 
   # By default, all parameters passed to the update and create actions will be
