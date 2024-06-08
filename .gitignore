@@ -12,6 +12,7 @@ rerun.txt
 pickle-email-*.html
 
 # Ignore all logfiles and tempfiles.
+/log
 /log/*
 /tmp/*
 !/log/.keep
@@ -70,3 +71,6 @@ yarn-debug.log*
 !/storage/.keep
 
 /config/master.key
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
