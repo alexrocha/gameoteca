@@ -110,6 +110,8 @@ GEM
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
+    cssbundling-rails (1.4.0)
+      railties (>= 6.0.0)
     date (3.3.4)
     debug (1.9.2)
       irb (~> 1.10)
@@ -338,12 +340,6 @@ GEM
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
     stringio (3.1.0)
-    tailwindcss-rails (2.6.1-aarch64-linux)
-      railties (>= 7.0.0)
-    tailwindcss-rails (2.6.1-arm64-darwin)
-      railties (>= 7.0.0)
-    tailwindcss-rails (2.6.1-x86_64-linux)
-      railties (>= 7.0.0)
     thor (1.3.1)
     timeout (0.4.1)
     tinymce-rails (5.10.9)
@@ -394,6 +390,7 @@ DEPENDENCIES
   brakeman
   bundler-audit
   capybara
+  cssbundling-rails (~> 1.4)
   debug
   devise
   image_processing (~> 1.2)
@@ -413,7 +410,6 @@ DEPENDENCIES
   simplecov
   sprockets-rails
   stimulus-rails
-  tailwindcss-rails (~> 2.6)
   trestle
   trestle-auth
   trestle-tinymce

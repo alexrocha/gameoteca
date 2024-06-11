@@ -85,4 +85,4 @@ group :test do
   gem "simplecov"
 end
 
-gem "tailwindcss-rails", "~> 2.6"
+gem "cssbundling-rails", "~> 1.4"

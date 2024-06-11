@@ -75,6 +75,10 @@ RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
 
+RUN apt-get update -qq && apt-get install -y nodejs npm
+RUN npm install -g npx
+RUN npm install --global yarn
+
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
