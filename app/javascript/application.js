@@ -6,3 +6,9 @@ import "@rails/actiontext"
 
 console.log('Hello World from application.js');
 import * as bootstrap from "bootstrap"
+import "./jquery"
+import "./isotope"
+import "./owl-carousel"
+import "./popup"
+import "./tabs"
+import "./custom"
