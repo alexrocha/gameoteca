@@ -1,0 +1,50 @@
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <nav class="main-nav">
+                  <!-- ***** Logo Start ***** -->
+                  <%= link_to root_path, class: 'logo' do %>
+                      <%= image_tag('logo') %>
+                  <% end %>
+                  <!-- ***** Logo End ***** -->
+                  <!-- ***** Search End ***** -->
+                  <div class="search-input">
+                    <form id="search" action="#">
+                      <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                      <i class="fa fa-search"></i>
+                    </form>
+                  </div>
+                  <!-- ***** Search End ***** -->
+                  <!-- ***** Menu Start ***** -->
+                  <ul class="nav">
+                      <li>
+                        <%= link_to 'Home', root_path %>
+                      </li>
+                      <li>
+                        <%= link_to 'Browse', browse_path %>
+                      </li>
+                      <li>
+                        <%= link_to 'Details', details_path %>
+                      </li>
+                      <li>
+                        <%= link_to 'Streams', streams_path %>
+                      </li>
+                      <li>
+                        <%= link_to profile_path do %>
+                          Profile
+                          <%= image_tag "profile-header" %>
+                        <% end %>
+                      </li>
+                  </ul>   
+                  <a class='menu-trigger'>
+                      <span>Menu</span>
+                  </a>
+                  <!-- ***** Menu End ***** -->
+              </nav>
+          </div>
+      </div>
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->
