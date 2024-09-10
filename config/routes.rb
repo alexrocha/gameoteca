@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get "main/index"
   get "profile", to: "main#profile"
+  get "games", to: "main#games"
   get "browse", to: "main#browse"
   get "details", to: "main#details"
   get "streams", to: "main#streams"

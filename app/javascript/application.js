@@ -12,3 +12,4 @@ import "./owl-carousel"
 import "./popup"
 import "./tabs"
 import "./custom"
+import "@popperjs/core";

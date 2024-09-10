@@ -13,4 +13,7 @@ class MainController < ApplicationController
 
   def streams
   end
+
+  def games
+  end
 end

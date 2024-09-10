@@ -8,4 +8,7 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.js"
-pin "bootstrap", to: "bootstrap.min.js"
+
+pin "bootstrap", to: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.esm.min.js"
+pin "@popperjs/core", to: "https://unpkg.com/@popperjs/core@2.11.8/dist/esm/popper.js"
+
