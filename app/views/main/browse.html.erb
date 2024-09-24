@@ -11,25 +11,23 @@
         </div>
         <!-- ***** Featured Games End ***** -->
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card">
-              <img src="..." class="card-img-top" alt="...">
-              <div class="card-footer">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Adicionar
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Finalizei</a></li>
-                    <li><a class="dropdown-item" href="#">Tenho</a></li>
-                    <li><a class="dropdown-item" href="#">Quero</a></li>
-                    <li><a class="dropdown-item" href="#">Sei la</a></li>
-                  </ul>
-                </div>
+        <div class="row row-cols-1 row-cols-md-5 g-4">
+          <% @games.each do |game| %>
+            <div class="col">
+              <%= image_tag main_app.url_for(game.picture), width: 150, height: 300, class: 'image-fit' if game.picture.attached? %>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle mt-2 w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Adicionar
+                </button>
+                <ul class="dropdown-menu w-100 text-center">
+                  <li><a class="dropdown-item" href="#">Finalizei</a></li>
+                  <li><a class="dropdown-item" href="#">Tenho</a></li>
+                  <li><a class="dropdown-item" href="#">Quero</a></li>
+                  <li><a class="dropdown-item" href="#">Sei la</a></li>
+                </ul>
               </div>
             </div>
-          </div>
+          <% end %>
         </div>
 
       </div>

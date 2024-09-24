@@ -6,6 +6,7 @@ class MainController < ApplicationController
   end
 
   def browse
+    @games = Game.all
   end
 
   def details
