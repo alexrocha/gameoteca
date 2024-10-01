@@ -2,34 +2,85 @@
   <div class="row">
     <div class="col-lg-12">
       <div class="page-content">
+        <!-- ***** Most Popular Start ***** -->
+        <div class="most-popular">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4>Lista de jogos</h4>
+              </div>
 
-        <!-- ***** Featured Games Start ***** -->
-        <div class="row">
-          <div class="col-lg-12">
-              <h4><em>Lista de Jogos</h4>
-          </div>
-        </div>
-        <!-- ***** Featured Games End ***** -->
+              <div class='row mb-4'>
+                <div class='col'>
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Digite o nome do jogo" aria-label="Search">
+                  </form>
+                </div>
+                
+                <div class='col'>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Plataformas
+                    </button>
+                    <ul class="dropdown-menu w-100">
+                      <li><a class="dropdown-item text-center" href="#">Finalizei</a></li>
+                      <li><a class="dropdown-item text-center" href="#">Tenho</a></li>
+                      <li><a class="dropdown-item text-center" href="#">Quero</a></li>
+                      <li><a class="dropdown-item text-center" href="#">Sei la</a></li>
+                    </ul>
+                  </div>
+                </div>
 
-        <div class="row row-cols-1 row-cols-md-5 g-4">
-          <% @games.each do |game| %>
-            <div class="col">
-              <%= image_tag main_app.url_for(game.picture), width: 150, height: 300, class: 'image-fit' if game.picture.attached? %>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle mt-2 w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Adicionar
-                </button>
-                <ul class="dropdown-menu w-100 text-center">
-                  <li><a class="dropdown-item" href="#">Finalizei</a></li>
-                  <li><a class="dropdown-item" href="#">Tenho</a></li>
-                  <li><a class="dropdown-item" href="#">Quero</a></li>
-                  <li><a class="dropdown-item" href="#">Sei la</a></li>
-                </ul>
+                <div class='col'>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Gêneros
+                    </button>
+                    <ul class="dropdown-menu w-100">
+                      <li><a class="dropdown-item text-center" href="#">Finalizei</a></li>
+                      <li><a class="dropdown-item text-center" href="#">Tenho</a></li>
+                      <li><a class="dropdown-item text-center" href="#">Quero</a></li>
+                      <li><a class="dropdown-item text-center" href="#">Sei la</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+              </div>
+
+
+              <div class="row">
+                <% @games.each do |game| %>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                      <%= 
+                        image_tag main_app.url_for(game.picture), 
+                        width: 230, 
+                        height: 168, 
+                        class: 'image-fit' if game.picture.attached? 
+                      %>
+                      <h4 class='mb-2'>
+                        <%= game.title %>
+                      </h4>
+
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Adicionar
+                        </button>
+                        <ul class="dropdown-menu w-100">
+                          <li><a class="dropdown-item text-center" href="#">Finalizei</a></li>
+                          <li><a class="dropdown-item text-center" href="#">Tenho</a></li>
+                          <li><a class="dropdown-item text-center" href="#">Quero</a></li>
+                          <li><a class="dropdown-item text-center" href="#">Sei la</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             </div>
-          <% end %>
+          </div>
         </div>
-
+        <!-- ***** Most Popular End ***** -->
       </div>
     </div>
   </div>
