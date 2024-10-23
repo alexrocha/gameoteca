@@ -2,3 +2,15 @@
   object-fit: cover;
   object-position: center;
 }
+
+.btn-dropdown-pink {
+  background-color: #ec6090;
+}
+
+.btn-dropdown-pink:hover {
+  background-color: #b1486d;
+}
+
+.dropdown-inside-pink {
+  background-color: rgb(246, 142, 177);
+}

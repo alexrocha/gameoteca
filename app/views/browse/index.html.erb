@@ -10,43 +10,25 @@
                 <h4>Lista de jogos</h4>
               </div>
 
-              <div class='row mb-4'>
-                <div class='col'>
-                  <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Digite o nome do jogo" aria-label="Search">
-                  </form>
-                </div>
-                
-                <div class='col'>
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Plataformas
-                    </button>
-                    <ul class="dropdown-menu w-100">
-                      <li><a class="dropdown-item text-center" href="#">Finalizei</a></li>
-                      <li><a class="dropdown-item text-center" href="#">Tenho</a></li>
-                      <li><a class="dropdown-item text-center" href="#">Quero</a></li>
-                      <li><a class="dropdown-item text-center" href="#">Sei la</a></li>
-                    </ul>
-                  </div>
+              <%= form_with(scope: :filter, url: search_browse_index_path, method: :get, class: 'd-flex') do |f| %>
+                <div class="field w-100">
+                  <%= f.text_field :title, placeholder: 'Digite o nome do jogo', class: 'form-control me-2', value: params.dig(:filter, :title) %>
                 </div>
 
-                <div class='col'>
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Gêneros
-                    </button>
-                    <ul class="dropdown-menu w-100">
-                      <li><a class="dropdown-item text-center" href="#">Finalizei</a></li>
-                      <li><a class="dropdown-item text-center" href="#">Tenho</a></li>
-                      <li><a class="dropdown-item text-center" href="#">Quero</a></li>
-                      <li><a class="dropdown-item text-center" href="#">Sei la</a></li>
-                    </ul>
-                  </div>
+                <div class="field w-100 px-3">
+                  <%= f.collection_select :platform_id, @platforms, :id, :name, 
+                    { include_blank: "Todos", prompt: "Selecione a plataforma", selected: params.dig(:filter, :platform_id)}, 
+                    { class: "form-control", onchange: "this.form.submit()" } 
+                  %>
                 </div>
-                
-              </div>
 
+                <div class="field w-100">
+                  <%= f.collection_select :genre_id, @genres, :id, :title, 
+                    { include_blank: "Todos", prompt: "Selecione o gênero", selected: params.dig(:filter, :genre_id) }, 
+                    { class: "form-control", onchange: "this.form.submit()" } 
+                  %>
+                </div>
+              <% end %>
 
               <div class="row">
                 <% @games.each do |game| %>

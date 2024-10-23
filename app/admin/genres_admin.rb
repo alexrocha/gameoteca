@@ -6,7 +6,7 @@ Trestle.resource(:genres) do
   # Customize the table columns shown on the index view.
   #
   table do
-    column :name
+    column :title
     column :created_at, align: :center
     actions
   end
@@ -14,7 +14,7 @@ Trestle.resource(:genres) do
   # Customize the form fields shown on the new/edit views.
   #
   form do |genre|
-    text_field :name
+    text_field :title
   end
 
   # By default, all parameters passed to the update and create actions will be

@@ -5,10 +5,6 @@ class MainController < ApplicationController
   def profile
   end
 
-  def browse
-    @games = Game.all
-  end
-
   def details
   end
 
