@@ -26,9 +26,28 @@ Trestle.resource(:games) do
         number_field :players
       end
     end
+
+    row do
+      col(sm: 6) do
+        collection_select :developer_ids, Developer.all, :id, :name, { label: Developer.model_name.human(count: 2) }, { multiple: true }
+      end
+      col(sm: 6) do
+        collection_select :genre_ids, Genre.all, :id, :title, { label: Genre.model_name.human(count: 2) }, { multiple: true }
+      end
+    end
+
+    row do
+      col(sm: 6) do
+        collection_select :platform_ids, Platform.all, :id, :name, { label: Platform.model_name.human(count: 2) }, { multiple: true }
+      end
+      col(sm: 6) do
+        collection_select :publisher_ids, Publisher.all, :id, :name, { label: Publisher.model_name.human(count: 2) }, { multiple: true }
+      end
+    end
     text_area :description
     file_field :picture
     file_field :background_image
+
 
     sidebar do
       render 'admin/shared/images'
