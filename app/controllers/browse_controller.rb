@@ -2,11 +2,11 @@ class BrowseController < ApplicationController
   before_action :load_resources, only: [:index, :search]
 
   def index
-    @games = Game.all
+    @pagy, @games = pagy(Game.all)
   end
 
   def search
-    @games = filter_games
+    @pagy, @games = pagy(filter_games)
     render :index
   end
 

@@ -50,3 +50,5 @@ group :test do
   gem 'shoulda-matchers', '~> 6.0'
   gem "simplecov"
 end
+
+gem "pagy", "~> 9.3"
